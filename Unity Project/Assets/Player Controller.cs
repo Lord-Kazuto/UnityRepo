@@ -3,8 +3,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [Tooltip("Movement speed in units per second.")]
     public float moveSpeed = 5f;
+
+    [Header("Stats")]
+    public int coins = 0;
 
     private Rigidbody rb;
     private Vector3 movementInput;
@@ -33,6 +35,18 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 targetPosition = rb.position + movementInput * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(targetPosition);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        CubeRotator rotator = collision.gameObject.GetComponent<CubeRotator>();
+
+        if (rotator != null)
+        {
+            coins++;
+            Debug.Log("Coin collected! Total coins: " + coins);
+            Destroy(collision.gameObject);
         }
     }
 }
