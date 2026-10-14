@@ -205,13 +205,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 10, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 907836006}
   - component: {fileID: 907836005}
   - component: {fileID: 907836004}
+  - component: {fileID: 907836008}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -545,6 +546,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907836008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907836003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6954b7bdf5b4329b80ae7b22067089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeSpawner
+  cubePrefab: {fileID: 7211838830596860529, guid: 2f4b7417d746544519d12d0235c26c85, type: 3}
+  yOffset: 1
 --- !u!1 &1987301666
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
+  coins: 0
 --- !u!54 &1987301672
 Rigidbody:
   m_ObjectHideFlags: 0
